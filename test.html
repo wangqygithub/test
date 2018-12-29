@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm" name="myForm" method="GET">
+            <div>
+              <label for="username" >用户名：</label>
+              <input type="text" id="username" name="username" minlength="6" maxlength="6">
+            </div>
+            <div>
+              <label for="useracc">账号：</label>
+              <input type="text" id="useracc" name="useracc">
+            </div>
+            <!-- <div>
+              <label for="userfile">上传文件：</label>
+              <input type="file" id="userfile" name="userfile">
+            </div> -->
+          <input type="submit" value="Submit!" id="submit">
+          </form>
+        <select id="mySelect">
+            <option value="1">1111</option>
+            <option value="2">2222</option>
+            <option value="3">3333</option>
+        </select>
+</body>
+</html>
+<script>
+console.log(document.cookie)
+var myForm = document.getElementById('myForm');
+var formData = new FormData(myForm);
+var sub=document.getElementById('submit')
+sub.addEventListener('click', function() {
+    console.log(formData)
+})
+function inputHandler(e) {
+  console.log(e.target.value)
+}
+
+var mySelect = document.querySelector('#mySelect');
+mySelect.addEventListener('input', inputHandler);
+var useracc=document.getElementById('useracc')
+useracc.addEventListener('select', function (e) {
+  console.log(e.target.value); // "select"
+}, false);
+</script>
